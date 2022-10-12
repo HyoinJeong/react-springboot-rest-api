@@ -22,14 +22,14 @@ public class Product {
         this.updatedAt = LocalDateTime.now();
     }
 
-    public Product(UUID productId, String productName, Category category, long price, String description) {
+    public Product(UUID productId, String productName, Category category, long price, String description, LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.productId = productId;
         this.productName = productName;
         this.category = category;
         this.price = price;
         this.description = description;
-        this.createdAt = LocalDateTime.now();
-        this.updatedAt = LocalDateTime.now();
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
     }
 
     public UUID getProductId() {
