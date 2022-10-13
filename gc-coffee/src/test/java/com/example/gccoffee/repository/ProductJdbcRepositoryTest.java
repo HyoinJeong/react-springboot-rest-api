@@ -55,4 +55,12 @@ class ProductJdbcRepositoryTest {
         assertThat(all.isEmpty(),is(false));
     }
 
+    @Test
+    @Order(2)
+    @DisplayName("상품을 아이디로 조회할 수 있다")
+    void testFindById(){
+        var product=repository.findById(newProduct.getProductId());
+        assertThat(product.isEmpty(), is(false));
+    }
+
 }
