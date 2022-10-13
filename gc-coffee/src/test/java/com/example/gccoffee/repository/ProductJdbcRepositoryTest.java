@@ -63,4 +63,12 @@ class ProductJdbcRepositoryTest {
         assertThat(product.isEmpty(), is(false));
     }
 
+    @Test
+    @Order(3)
+    @DisplayName("상품을 이름으로 조회할 수 있다")
+    void testFindByName(){
+        var product=repository.findByName(newProduct.getProductName());
+        assertThat(product.isEmpty(), is(false));
+    }
+
 }
