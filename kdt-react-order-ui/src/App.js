@@ -7,18 +7,18 @@ import axios from "axios";
 
 function App() {
     const [products, setProducts]=useState([
-        {id:'uuid-1', productName:'콜롬비아 커피 1', category:'커피빈',price:5000},
-        {id:'uuid-2', productName:'콜롬비아 커피 2', category:'커피빈',price:5000},
-        {id:'uuid-3', productName:'콜롬비아 커피 3', category:'커피빈',price:5000}
+        {productId:'uuid-1', productName:'콜롬비아 커피 1', category:'커피빈',price:5000},
+        {productId:'uuid-2', productName:'콜롬비아 커피 2', category:'커피빈',price:5000},
+        {productId:'uuid-3', productName:'콜롬비아 커피 3', category:'커피빈',price:5000}
     ])
 
     const [items, setItems]=useState([])
-    const handleAddClicked = id => {
-        const product = products.find(v => v.id == id);
-        const found = items.find(v => v.id == id);
-        const updatedItems = found ? items.map(v => (v.id == id) ? {...v, count: v.count+1} : v) : [...items, {...product, count: 1}];
+    const handleAddClicked = productId => {
+        const product = products.find(v => v.productId == productId);
+        const found = items.find(v => v.productId == productId);
+        const updatedItems = found ? items.map(v => (v.productId == productId) ? {...v, count: v.count+1} : v) : [...items, {...product, count: 1}];
         setItems(updatedItems);
-        console.log(products.find(v => v.id == id), "added!")
+        console.log(products.find(v => v.productId == productId), "added!")
     }
 
     useEffect(() => {
