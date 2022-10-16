@@ -1,7 +1,7 @@
 import {SummaryItem} from "./SummaryItem";
 import React, {useState} from "react";
 
-export function Summary({items = []}) {
+export function Summary({items = [], onOrderSubmit}) {
     const totalPrice = items.reduce((prev, curr) => prev + (curr.price * curr.count), 0);
     const [order,setOrder] = useState({
         email: "", address: "", postcode: ""
@@ -9,6 +9,13 @@ export function Summary({items = []}) {
     const handleEmailInputChanged=(e) => setOrder({...order, email: e.target.value})
     const handleAddressInputChanged=(e) => setOrder({...order, address: e.target.value})
     const handlePostcodeInputChanged=(e) =>setOrder({...order, postcode: e.target.value})
+    const handleSubmit = (e) => {
+        if (order.address=="" || order.email == "" || order.postcode == ""){
+            alert("입력값을  확인해주세요!")
+        }else {
+            onOrderSubmit(order);
+        }
+    }
     return (
         <>
             <div>
@@ -35,7 +42,7 @@ export function Summary({items = []}) {
                 <h5 className="col">총금액</h5>
                 <h5 className="col text-end">{totalPrice}원</h5>
             </div>
-            <button className="btn btn-dark col-12">결제하기</button>
+            <button className="btn btn-dark col-12" onClick={handleSubmit}>결제하기</button>
         </>
     )
 }
