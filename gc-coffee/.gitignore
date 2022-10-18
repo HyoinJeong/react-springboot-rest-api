@@ -79,5 +79,6 @@ buildNumber.properties
 .project
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
-
+.idea/
+src/main/generated
 # End of https://www.toptal.com/developers/gitignore/api/java,maven

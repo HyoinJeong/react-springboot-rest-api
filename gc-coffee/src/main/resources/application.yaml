@@ -9,12 +9,12 @@ logging:
 
 spring:
   datasource:
-    url: jdbc:h2:mem:testdb
-    username: sa
-    driver-class-name: org.h2.Driver
-#    url: jdbc:mysql://localhost/order_mgmt
-#    username: root
-#    password: root1234!
+#    url: jdbc:h2:mem:testdb
+#    username: sa
+#    driver-class-name: org.h2.Driver
+    url: jdbc:mysql://localhost/order_mgmt
+    username: root
+    password: root1234!
   jpa:
     open-in-view: false
     defer-datasource-initialization: true
@@ -23,12 +23,12 @@ spring:
     properties:
       hibernate.format_sql: true
       hibernate.default_batch_fetch_size: 100
-  h2:
-    console:
-      enabled: true
+#  h2:
+#    console:
+#      enabled: true
   sql.init.mode: always
   data.rest:
-    base-path: /api
+    base-path: /api/v1
     detection-strategy: annotated
   thymeleaf3.decoupled-logic: true
 
