@@ -3,9 +3,9 @@ package com.example.gccoffee.dto;
 public record ArticleUpdateDto(
         String title,
         String content,
-        String hashtag
+        String type
 ) {
-    public static ArticleUpdateDto of(String title, String content, String hashtag) {
-        return new ArticleUpdateDto(title, content, hashtag);
+    public static ArticleUpdateDto of(String title, String content, String type) {
+        return new ArticleUpdateDto(title, content, type);
     }
 }
