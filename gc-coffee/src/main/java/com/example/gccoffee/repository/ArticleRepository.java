@@ -22,7 +22,7 @@ public interface ArticleRepository extends
     Page<Article> findByContentContaining(String content, Pageable pageable);
     Page<Article> findByUserAccount_UserIdContaining(String userId, Pageable pageable);
     Page<Article> findByUserAccount_NicknameContaining(String nickname, Pageable pageable);
-    Page<Article> findByType(String hashtag, Pageable pageable);
+    Page<Article> findByType(String type, Pageable pageable);
 
 
     @Override
