@@ -69,4 +69,17 @@ public class ArticleService {
     public long getArticleCount() {
         return articleRepository.count();
     }
+
+    @Transactional(readOnly = true)
+    public Page<ArticleDto> searchArticlesViatype(String type, Pageable pageable) {
+        if (type == null || type.isBlank()) {
+            return Page.empty(pageable);
+        }
+
+        return articleRepository.findByType(type, pageable).map(ArticleDto::from);
+    }
+
+    public List<String> gettypes() {
+        return articleRepository.findAllDistincttypes();
+    }
 }

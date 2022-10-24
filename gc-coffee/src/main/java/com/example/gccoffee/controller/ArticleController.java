@@ -55,6 +55,24 @@ public class ArticleController {
 
         return "articles/detail";
     }
-    
+
+    @GetMapping("/search-type")
+    public String searchtype(
+            @RequestParam(required = false) String searchValue,
+            @PageableDefault(size = 10, sort = "createdAt", direction = Sort.Direction.DESC) Pageable pageable,
+            ModelMap map
+    ) {
+        Page<ArticleResponse> articles = articleService.searchArticlesViatype(searchValue, pageable).map(ArticleResponse::from);
+        List<Integer> barNumbers = paginationService.getPaginationBarNumbers(pageable.getPageNumber(), articles.getTotalPages());
+        List<String> types = articleService.gettypes();
+
+        map.addAttribute("articles", articles);
+        map.addAttribute("types", types);
+        map.addAttribute("paginationBarNumbers", barNumbers);
+        map.addAttribute("searchType", SearchType.TYPE);
+
+        return "articles/search-type";
+    }
+
 
 }
