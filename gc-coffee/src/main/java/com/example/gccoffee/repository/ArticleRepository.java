@@ -35,6 +35,7 @@ public interface ArticleRepository extends
         bindings.bind(root.content).first(StringExpression::containsIgnoreCase);
         bindings.bind(root.type).first(StringExpression::containsIgnoreCase);
         bindings.bind(root.createdAt).first(DateTimeExpression::eq);
+        bindings.bind(root.status).first(StringExpression::containsIgnoreCase);
         bindings.bind(root.createdBy).first(StringExpression::containsIgnoreCase);
     }
 

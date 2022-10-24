@@ -16,7 +16,8 @@ import java.util.Set;
         @Index(columnList = "title"),
         @Index(columnList = "type"),
         @Index(columnList = "createdAt"),
-        @Index(columnList = "createdBy")
+        @Index(columnList = "createdBy"),
+        @Index(columnList = "status")
 })
 @Entity
 public class Article extends AuditingFields {
@@ -30,6 +31,7 @@ public class Article extends AuditingFields {
     @Setter @Column(nullable = false, length = 10000) private String content; // 본문
 
     @Setter private String type; // 문의 종류
+    @Setter @Column(columnDefinition = "varchar(20) default '답변대기'") private String status; // 답변 상태
 
     @ToString.Exclude
     @OrderBy("createdAt DESC")
@@ -44,6 +46,7 @@ public class Article extends AuditingFields {
         this.title = title;
         this.content = content;
         this.type = type;
+        this.status = "답변대기";
     }
 
     public static Article of(UserAccount userAccount, String title, String content, String type) {
