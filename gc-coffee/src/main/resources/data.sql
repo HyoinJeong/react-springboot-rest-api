@@ -1,6 +1,9 @@
 -- 테스트 계정
 insert into user_account (user_id, user_password, nickname, email, memo, created_at, created_by, updated_at, updated_by) values
-    ('hyoin', 'hyoin1234', 'Hi', 'hi@mail.com', 'I am Hi.', now(), 'hi', now(), 'hi')
+    ('hyoin', 'hyoin1234', 'Hi', 'hi@gmail.com', 'I am Hi.', now(), 'hi', now(), 'hi')
+;
+insert into user_account (user_id, user_password, nickname, email, memo, created_at, created_by, updated_at, updated_by) values
+    ('hyoin2', 'hyoin21234', 'Hello', 'hello@gmail.com', 'I am Hello.', now(), 'hello', now(), 'hi')
 ;
 
 
@@ -8,9 +11,9 @@ insert into user_account (user_id, user_password, nickname, email, memo, created
 -- 100 게시글
 -- insert into article (title, content,type, created_by, updated_by, created_at, updated_at) values
 --     ('Quisque ut erat.', 'hi','주문', 'Kamilah', 'Murial', '2021-05-30 23:53:46', '2021-03-10 08:48:50');
-insert into article (user_account_id, title, content, type, created_at, updated_at, created_by, updated_by) values (1, 'Tres-Zap', 'Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.', 'Green', '2022-09-18 16:55:58', '2022-09-24 14:14:35', 'Fawn', 'Oralle');
-insert into article (user_account_id, title, content, type, created_at, updated_at, created_by, updated_by) values (1, 'Solarbreeze', 'Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', 'Indigo', '2022-03-20 00:51:34', '2022-09-09 01:07:35', 'Sidoney', 'Nahum');
-insert into article (user_account_id, title, content, type, created_at, updated_at, created_by, updated_by) values (1, 'Otcom', 'Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam. Nam tristique tortor eu pede.', 'Yellow', '2022-09-09 13:45:43', '2022-06-29 11:41:33', 'Bernita', 'Ryun');
+insert into article (user_account_id, title, content, type, created_at, updated_at, created_by, updated_by) values (2, 'Tres-Zap', 'Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.', 'Green', '2022-09-18 16:55:58', '2022-09-24 14:14:35', 'Fawn', 'Oralle');
+insert into article (user_account_id, title, content, type, created_at, updated_at, created_by, updated_by) values (2, 'Solarbreeze', 'Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', 'Indigo', '2022-03-20 00:51:34', '2022-09-09 01:07:35', 'Sidoney', 'Nahum');
+insert into article (user_account_id, title, content, type, created_at, updated_at, created_by, updated_by) values (2, 'Otcom', 'Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam. Nam tristique tortor eu pede.', 'Yellow', '2022-09-09 13:45:43', '2022-06-29 11:41:33', 'Bernita', 'Ryun');
 insert into article (user_account_id, title, content, type, created_at, updated_at, created_by, updated_by) values (1, 'Cookley', 'Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis.', 'Aquamarine', '2022-10-07 05:27:20', '2021-12-30 00:28:35', 'Vera', 'Brietta');
 insert into article (user_account_id, title, content, type, created_at, updated_at, created_by, updated_by) values (1, 'Treeflex', 'Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo.', 'Turquoise', '2022-04-23 13:59:57', '2022-02-23 16:13:30', 'Samara', 'Boote');
 insert into article (user_account_id, title, content, type, created_at, updated_at, created_by, updated_by) values (1, 'Matsoft', 'Etiam justo. Etiam pretium iaculis justo.', 'Red', '2022-07-12 08:21:53', '2022-01-17 01:29:12', 'Konstanze', 'Chastity');
