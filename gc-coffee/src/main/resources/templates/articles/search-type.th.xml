@@ -41,6 +41,12 @@
             searchType=${searchType.name},
             searchValue=${param.searchValue}
         )}"/>
+        <attr sel="th.status/a" th:text="'답변상태'" th:href="@{/articles(
+            page=${articles.number},
+            sort='status' + (*{sort.getOrderFor('status')} != null ? (*{sort.getOrderFor('status').direction.name} != 'DESC' ? ',desc' : '') : ''),
+            searchType=${searchType.name},
+            searchValue=${param.searchValue}
+        )}"/>
       </attr>
       <attr sel="tbody" th:remove="all-but-first">
         <attr sel="tr[0]" th:each="article : ${articles}">
@@ -48,6 +54,7 @@
           <attr sel="td.content/span" th:text="${article.content}" />
           <attr sel="td.user-id" th:text="${article.nickname}" />
           <attr sel="td.created-at/time" th:datetime="${article.createdAt}" th:text="${#temporals.format(article.createdAt, 'yyyy-MM-dd')}" />
+          <attr sel="td.status" th:text="${article.status}" />
         </attr>
       </attr>
     </attr>

@@ -25,6 +25,7 @@ public interface ArticleRepository extends
     Page<Article> findByUserAccount_UserIdContaining(String userId, Pageable pageable);
     Page<Article> findByUserAccount_NicknameContaining(String nickname, Pageable pageable);
     Page<Article> findByType(String type, Pageable pageable);
+    Page<Article> findByStatus(String status, Pageable pageable);
 
 
     @Override
